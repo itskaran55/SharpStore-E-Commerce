@@ -12,15 +12,23 @@ import Mens from './components/mens';
 import Womens from './components/Womens';
 import Registration from './components/registration';
 import Login from './components/login';
+import { UserProvider } from './components/UserContext';
+import Buy from './components/Buy';
+import About from './components/about';
+import Contact from './components/contact';
 
 const App = () => {
   return (
     <div className='mainApp'>
         <CartProvider>
+          <UserProvider>
           <Router>
             <Routes>
               <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About/>}/>
               <Route path='/signup' element={<Registration />} />
+              <Route path='/contact' element={<Contact/>} />
+              <Route path='/buy' element={<Buy />} />
               <Route path='/login' element={<Login />} />
               <Route path='/cart' element={<Cart />} />
               <Route path='/phones' element={<Phones category="smartphones" />} />
@@ -31,6 +39,7 @@ const App = () => {
               <Route path='/womens' element={<Womens category="tops" />} />
             </Routes>
           </Router>
+          </UserProvider>
         </CartProvider>
     </div>
   );

@@ -24,7 +24,6 @@
     position: absolute;
     height: 180px;
     width: 180px;
-    /* background-color: rgb(222, 38, 38); */
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(114,130,164,1) 40%, rgba(124,95,167,1) 76%, rgba(133,75,168,1) 100%);
     border-radius: 50%;
     z-index: -1;
@@ -70,4 +69,6 @@
     padding: 10px 12px;
     margin: 10px 13px;
     font-size: 1.2em;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgba(124,132,222,1) 32%, rgba(82,161,225,1) 73%, rgba(42,189,227,1) 100%);
 }

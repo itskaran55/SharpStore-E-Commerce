@@ -158,9 +158,8 @@
     }
 
     .container1 > .hero1 > .imagebox1 > img {
-        height: auto;
-        width: 80%;
-        max-width: 200px;
+        height: 70%;
+        width: 70%;
     }
 
     .container1 > .hero1 > .imagebox1::after {

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useCart } from 'react-use-cart';
 import Layout from './layout';
 import './styles/cart.css'; // Import the CSS file
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserContext } from './UserContext';
 
 const Cart = () => {
     const {
@@ -15,6 +16,21 @@ const Cart = () => {
         removeItem,
         emptyCart,
     } = useCart();
+
+    const { user } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    const handleBuy = (e,item) => {
+        if (!user) {
+            e.preventDefault();
+            navigate('/signup');
+        } else {
+            navigate('/buy');
+            // navigate('/buy', { state: { price: item.price } });
+            // console.log(item.price);
+            
+        }
+    };
 
     if (isEmpty) {
         return (
@@ -70,7 +86,7 @@ const Cart = () => {
                                     <button onClick={() => removeItem(item.id)}>Remove Item</button>
                                 </div>
                                 <div className='buy'>
-                                    <button onClick={() => removeItem(item.id)}>Buy</button>
+                                    <Link to="/buy" onClick={(e) => handleBuy(e,item)} className='link'>Buy</Link>
                                 </div>
                             </div>
                         ))}
