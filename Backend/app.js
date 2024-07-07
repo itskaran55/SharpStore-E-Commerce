@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const collection = require("./mongoose");
 const Checkout = require("./checkout");
@@ -10,9 +11,6 @@ app.use(cors());
 const Razorpay = require("razorpay");
 const Contact = require("./contact");
 // const Checkout = require("./mongoose");
-require('dotenv').config();
-
-
 
 app.post("/login",async(req,res)=>{
     const{email,password} = req.body
@@ -66,8 +64,10 @@ app.post("/signup",async(req,res)=>{
 
 // Payment Gateway
 const razorpay = new Razorpay({
-    key_id: 'rzp_test_znYZ029eSbyTDf',
-    key_secret: '2gSXb1P05eU02G9lz781fpcq'
+    // key_id: 'rzp_test_znYZ029eSbyTDf',
+    key_id: process.env.RAZORPAY_KEY_ID,
+    // key_secret: '2gSXb1P05eU02G9lz781fpcq'
+    key_secret: process.env.RAZORPAY_KEY_SECRET
   });
   
   app.post('/buy', async (req, res) => {
@@ -148,6 +148,11 @@ app.post('/contact',async (req,res) => {
     }
 })
   
-app.listen(3000,() => {
-    console.log('Port Connected');
-})
+// app.listen(3000,() => {
+//     console.log('Port Connected');
+// })
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
