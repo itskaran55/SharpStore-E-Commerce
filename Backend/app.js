@@ -42,7 +42,8 @@ app.post("/signup",async(req,res)=>{
     const data = {
         username : username,
         email : email,
-        password : password
+        password : password,
+        role: 'user' // Default role is 'user'
     }
 
     try {

@@ -22,7 +22,7 @@ function ProductCarousel() {
                     </div>
                 </div>
                 <div className='imagebox1 '>
-                    <img className='imglp' src='ecm7remove.png'></img>
+                    <img className='imglp' src='ecm7remove.png' alt='img'></img>
                 </div>
             </div>
         </div>

@@ -64,6 +64,7 @@
     position: absolute;
     left: 360px;
     top: 210px;
+    z-index: 1;
 }
 
 .container1 > .hero1 > .textbox1 > .allpro > p {

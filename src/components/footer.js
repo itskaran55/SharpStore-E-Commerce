@@ -34,8 +34,8 @@ function Footer() {
             <h2 className='fw-bold'>Contact</h2>
           </div>
           <div className='des d-flex flex-column'>
-            <a href='#' className='text-decoration-none text-light'>Linkedin</a>
-            <a href='#' className='text-decoration-none text-light'>Twitter</a>
+            <a href='https://www.linkedin.com/in/karan-rajpara-058533245/' target='_blank' className='text-decoration-none text-light'>Linkedin</a>
+            <a href='https://x.com/rajpara_karan' target='_blank' className='text-decoration-none text-light'>Twitter</a>
             <a href='#' className='text-decoration-none text-light'>Email</a>
             <a href='#' className='text-decoration-none text-light'>Facebook</a>
           </div>

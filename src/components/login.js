@@ -23,7 +23,13 @@ function Login() {
 
       if (response.data.status === "exist") {
         setUser(response.data.user.username);
-        history("/", { state: { id: response.data.user.username } });
+        if (response.data.user.role === 'user') {
+          // history("/", { state: { id: response.data.user.username } });
+          history("/");
+        }
+        else {
+          history("/Admin/Admin", { state: { id: response.data.user.username } });
+        }
       } else if (response.data.status === "NotExist") {
         alert("User does not exist or wrong credentials");
       }

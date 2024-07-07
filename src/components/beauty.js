@@ -50,7 +50,7 @@ function Beauty(props) {
                     {products.map(product => (
                         <div className='productCards'>
                             <div className='pimg'>
-                                <img src={product.images} />
+                                <img src={product.images} alt='img'/>
                             </div>
                             <div className='ptitle'>
                                 <h3 className='text-center' style={{ fontFamily: "poppins" }}>{product.title}</h3>

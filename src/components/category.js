@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAppleAlt, faLaptop, faMobile, faScissors, faTshirt} from '@fortawesome/free-solid-svg-icons';
+import { faAppleAlt, faLaptop, faMobile, faScissors} from '@fortawesome/free-solid-svg-icons';
 import './styles/category.css'; // Import the CSS file
 
 function category() {
